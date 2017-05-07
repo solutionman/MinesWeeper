@@ -1,3 +1,4 @@
+// MinesWeeper
 
 import javax.swing.*;
 import java.awt.*;
@@ -299,15 +300,15 @@ public class Main {
 
                                         // Check is you win the game
                                         int freeSpots = 0;
-                                    	int pressedButtons = 0;
-                                        for(int k = 0; k < 100; ++k){                                        	
+                                        int pressedButtons = 0;
+                                        for(int k = 0; k < 100; ++k){
                                             if(buttonsCondition[k] == 0){
                                                 ++freeSpots;
                                             }
-                                            if(buttonsCondition[k] == 0 && buttons[k].isEnabled()){
-                                            	++pressedButtons;
+                                            if(buttonsCondition[k] == 0 && !buttons[k].isEnabled()){
+                                                ++pressedButtons;
                                             }
-                                            
+
                                         }
                                         if(freeSpots == pressedButtons){
                                             JOptionPane.showMessageDialog(frame, "You Win !!!");
@@ -318,7 +319,7 @@ public class Main {
                                                 buttons[m].setEnabled(false);
                                             }
                                         }
-                                        
+
                                     }
                                 }
                             }
@@ -359,8 +360,4 @@ public class Main {
 
     }
 }
-
-
-
-
 
